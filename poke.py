@@ -718,7 +718,7 @@ class Inventory:
                     sys.exit()
 
                 elif event.type == pygame.KEYDOWN:
-                    if event.key in [pygame.K_b, pygame.K_ESCAPE]:
+                    if event.key in [pygame.K_e, pygame.K_ESCAPE]:
                         pygame.mixer.music.stop()
                         return
                     elif event.key == pygame.K_RIGHT:
@@ -802,7 +802,7 @@ class Inventory:
                     sys.exit()
 
                 elif event.type == pygame.KEYDOWN:
-                    if event.key in [pygame.K_ESCAPE, pygame.K_b]:
+                    if event.key in [pygame.K_ESCAPE, pygame.K_e]:
                         return
                     elif event.key == pygame.K_RETURN:
                         potion_name = potions[cursor]
@@ -833,7 +833,7 @@ class Game:
         self.monster = Monster("こうかとん", 100)
         self.monster.status = "Poison"
         self.inventory = Inventory(self.screen, self.monster)
-        pygame.mixer.music.load("poke_center.wav")  # BGMファイル読み込み
+        pygame.mixer.music.load("魔王魂 ループ  ファンタジー10.mp3")  # BGMファイル読み込み
 
         # 状態
         self.mode = MODE_TITLE
@@ -881,8 +881,8 @@ class Game:
                     self.pink_mode = not self.pink_mode
                     continue
 
-                # Bキーでインベントリを開く
-                if event.type == pygame.KEYDOWN and event.key == pygame.K_b:
+                # Eキーでインベントリを開く
+                if event.type == pygame.KEYDOWN and event.key == pygame.K_e:
                     self.inventory.open()
 
                 # ペットモード中の操作
